@@ -68,7 +68,7 @@ contract HorseNFT is ERC721URIStorage {
                     '{"name": "',
                     // We set the title of our NFT as the generated word.
                     combinedWord,
-                    '", "description": "A highly acclaimed collection of squares.", "image": "data:image/svg+xml;base64,',
+                    '", "description": "An NFT form highly acclaimed collection of square Horses JOD.", "image": "data:image/svg+xml;base64,',
                     // We add data:image/svg+xml;base64 and then append our base64 encode our svg.
                     Base64.encode(bytes(finalsvg)),
                     '"}'
