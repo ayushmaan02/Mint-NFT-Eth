@@ -28,7 +28,6 @@ contract HorseNFT is ERC721URIStorage {
 
     function pickRandomFirstWord(uint256 tokenId) public view returns(string memory) {
         uint256 rand = random(string(abi.encodePacked("FIRST_WORD", Strings.toString(tokenId))));
-
         rand = rand % firstWords.length;
         return firstWords[rand];
     }
@@ -78,13 +77,13 @@ contract HorseNFT is ERC721URIStorage {
         )
     );
         // Just like before, we prepend data:application/json;base64, to our data.
-    string memory finalTokenUri = string(
-        abi.encodePacked("data:application/json;base64,", json)
-    );
+        string memory finalTokenUri = string(
+            abi.encodePacked("data:application/json;base64,", json)
+        );
 
         console.log("\n.......................");
-        console.log(finalsvg);
-        console.log("\n.......................");
+        console.log(finalTokenUri);
+        console.log(".......................\n");
 
         _safeMint(msg.sender, newItemId);
         
