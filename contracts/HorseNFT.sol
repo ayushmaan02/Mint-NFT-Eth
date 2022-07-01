@@ -22,6 +22,8 @@ contract HorseNFT is ERC721URIStorage {
      string[] secondWords = ["Jerry", "Goffy", "Tom", "Oswald", "Oggy", "Nimo"];
      string[] thirdWords = ["Cake", "Panner", "Pastries", "LimeSoda", "Mushroom", "FishCurry"];
 
+     event NewHorseNFTMinted(address sender, uint256 tokenId);
+
     constructor() ERC721 ("SquareNFT", "SQUARE") {
         console.log("This is my NFT contract. JOD!!");
     }
@@ -91,5 +93,9 @@ contract HorseNFT is ERC721URIStorage {
 
         console.log("An NFT w/ ID %s has been minted to %s", newItemId, msg.sender);
         _tokenIds.increment();
+
+    emit NewHorseNFTMinted(msg.sender, newItemId);
+
     }
+
 }
